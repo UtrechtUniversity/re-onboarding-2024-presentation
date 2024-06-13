@@ -1,0 +1,193 @@
+--- 
+format: 
+  revealjs:
+    theme: themes/uu.scss
+    logo: images/UU_logo_2021_EN_RGB.png
+    footer: "Dawa Ometto"
+---
+
+# Research Engineering & Infrastructure  {data-background-color="#FFCD00"}
+
+::: {.r-stack}
+Presentation subtitle
+:::
+
+::: {.footer}
+:::
+
+# {data-background-color="#FFCD00"}
+
+:::::::::::::: {.columns}
+
+::: {.column width="40%"}
+
+::: {.subtitle}
+
+Overview
+
+:::
+* `whoami`
+* Research Engineering at UU
+* Infrastructure at UU
+* Example: Galaxy Workflow Engine on ResearchCloud
+:::
+::: {.column width="60%"}
+![](images/image.jpg){fig-align="right" width="300"}
+:::
+::::::::::::::
+
+
+## UU Research Engineering Team
+
+::: {style="text-align: left; margin-top: 2em"}
+**Goal: Increase research impact with advanced digital technologies**
+
+<br>
+
+Core activities include:
+
+- Projects
+- Trainings
+- Consultancy (e.g. HPC)
+:::
+
+##
+
+<br>
+```{mermaid}
+flowchart LR
+  B((RDM Support))
+  E --- B --- A
+  subgraph UB["UU Library"]
+    A(Academic Services)
+  end
+  subgraph ITS[ITS]
+    C(RDMS)
+    C --> D(Yoda team)
+    C --> E(Research Engineering)
+  end
+
+style UB fill:#FFCD00
+style ITS fill:#FFCD00
+style A fill:#fff9dd
+style C fill:#fff9dd
+style D fill:#fff9dd
+style E fill:#fff9dd
+```
+
+::: {style="text-align: center; margin-top: 180px; font-size: 3em; color: red;"}
+
+uu.nl/rdm
+
+:::
+
+## Infrastructure at UU
+::: {.theme-section}
+
+Hosting:
+
+- OpenShift (UU)
+- Various solutions @ faculties
+
+Data storage and archiving:
+
+- Yoda (=iRODS, currently @ UU)
+- SURF solutions
+
+:::
+
+## Infrastructure at UU
+::: {.theme-section}
+
+HPC:
+
+- Clusters at various faculties
+- At SURF:
+  - Snellius
+  - ResearchCloud (VRE)
+
+:::
+## Example Project: Vet Galaxy
+::: {.theme-section}
+
+Request:
+
+- Veterinary Sciences group regularly processes large amounts (!! > 1TB) of dog sequencing data.
+- Currently data is collected, preprocessed, analysed, and stored "manually" by an IT-savvy researcher.
+- Can we help turn this into a robust, scalable, and user-friendly process?
+  
+:::
+
+## Example Project: Vet Galaxy
+::: {.theme-section}
+
+Solution ingredients:
+
+- Yoda for data storage
+  - Upload via [iBridges](https://github.com/UtrechtUniversity/ibridges)!
+- Galaxy workflow engine
+- Compute:
+  - ResearchCloud
+  - Or: Snellius integration!
+
+:::
+
+## Example Project: Vet Galaxy
+::: {.theme-section}
+
+Galaxy:
+
+* Open source data analysis platform
+* In-browser: no CLI or programming expertise needed
+* Define custom **tools** and **workflows**
+  * tools are shareable and versionable
+* Run workflows locally or remotely
+
+:::
+
+## Example Project: Vet Galaxy
+::: {.theme-section}
+
+Problem:
+
+- Galaxy servers are complicated and require serious resources to administer.
+- Public Galaxy servers are slow.
+
+Solution:
+
+- 'One-click, single-use' Galaxy on ResearchCloud!
+
+:::
+
+## Example Project: Vet Galaxy
+::: {.theme-section}
+
+Run jobs on ResearchCloud:
+
+```{mermaid}
+flowchart TD
+    ResearchCloud-->|launch|Galaxy
+    GitHub-->|provision|Galaxy
+    Yoda<-->|data|Galaxy
+    Galaxy-->|run workflow|Galaxy
+```
+
+:::
+
+## Example Project: Vet Galaxy
+::: {.theme-section}
+
+Run jobs on cluster (?):
+
+```{mermaid}
+
+flowchart TD
+    ResearchCloud-->|launch|Galaxy
+    GitHub-->|provision|Galaxy
+    Yoda<-->|data|Galaxy
+    Galaxy-->|run workflow|Snellius
+    Galaxy-. mount .->dCache
+    Snellius-. mount .->dCache
+```
+
+:::
