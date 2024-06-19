@@ -29,11 +29,9 @@ Overview
 * `whoami`
 * Research Engineering at UU
 * Infrastructure at UU
-* Example: Galaxy Workflow Engine on ResearchCloud
+* Use case: Galaxy Workflow Engine on ResearchCloud
 :::
-::: {.column width="60%"}
-![](images/image.jpg){fig-align="right" width="300"}
-:::
+
 ::::::::::::::
 
 
@@ -112,7 +110,7 @@ HPC:
 
 Request:
 
-- Veterinary Sciences group regularly processes large amounts (!! > 1TB) of dog sequencing data.
+- Veterinary Sciences group regularly processes large amounts of dog sequencing data.
 - Currently data is collected, preprocessed, analysed, and stored "manually" by an IT-savvy researcher.
 - Can we help turn this into a robust, scalable, and user-friendly process?
   
@@ -126,6 +124,7 @@ Solution ingredients:
 - Yoda for data storage
   - Upload via [iBridges](https://github.com/UtrechtUniversity/ibridges)!
 - Galaxy workflow engine
+  - Convert pipeline to custom Galaxy workflow
 - Compute:
   - ResearchCloud
   - Or: Snellius integration!
