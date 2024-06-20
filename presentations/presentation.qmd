@@ -3,16 +3,13 @@ format:
   revealjs:
     theme: themes/uu.scss
     logo: images/UU_logo_2021_EN_RGB.png
-    footer: "Dawa Ometto"
+    footer: "slides: https://edu.nl/kbkwn"
 ---
 
 # Research Engineering & Infrastructure  {data-background-color="#FFCD00"}
 
 ::: {.r-stack}
-Presentation subtitle
-:::
-
-::: {.footer}
+Dawa Ometto
 :::
 
 # {data-background-color="#FFCD00"}
