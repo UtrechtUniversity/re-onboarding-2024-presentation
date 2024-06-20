@@ -23,8 +23,7 @@ Dawa Ometto
 Overview
 
 :::
-* `whoami`
-* Research Engineering at UU
+* Research engineering at UU
 * Infrastructure at UU
 * Use case: Galaxy Workflow Engine on ResearchCloud
 :::
